@@ -63,6 +63,7 @@ $ docker run --rm \
 | HEIGHT | Height of browser. | - | `768` |
 | FULL_PAGE | When true, takes a screenshot of the full scrollable page. | - | `false` |
 | CHANNEL | Slack channel name to post. | - | `general` |
+| MESSAGE | Message introducing the image. | - | `general` |
 | BASIC_AUTH_USERNAME | Username to pass basic authentication. | - | `null` |
 | BASIC_AUTH_PASSWORD | Password to pass basic authentication. | - | `null` |
 | COOKIES | JSON Array string to pass to browser. | - | `null` |
