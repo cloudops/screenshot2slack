@@ -13,7 +13,7 @@ const FULL_PAGE = process.env.FULL_PAGE;
 const API_URL = 'https://slack.com/api/files.upload';
 const SLACK_BOT_TOKEN = process.env.SLACK_BOT_TOKEN;
 const CHANNEL = process.env.CHANNEL || 'general';
-const MSG = process.env.MESSAGE || 'general';
+const MESSAGE = process.env.MESSAGE || 'general';
 
 async function loginWithCookie(page, cookiesStr) {
   const cookies = JSON.parse(cookiesStr);
@@ -58,7 +58,7 @@ async function loginWithCookie(page, cookiesStr) {
       filename: FILE_NAME,
       file: fs.createReadStream('./' + FILE_NAME),
       channels: CHANNEL,
-      initial_comment: MSG
+      initial_comment: MESSAGE
     }
   };
   request.post(data, function(error, response, body) {
