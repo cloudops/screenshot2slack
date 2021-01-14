@@ -1,3 +1,4 @@
+
 const fs = require('fs');
 const request = require('request');
 const puppeteer = require('puppeteer');
@@ -48,7 +49,8 @@ async function loginWithCookie(page, cookiesStr) {
   // see https://github.com/GoogleChrome/puppeteer/issues/1183
   await page._client.send('Emulation.clearDeviceMetricsOverride');
   await page.screenshot({path: FILE_NAME, fullPage: (FULL_PAGE==='true')});
-
+  // Waiting 4 seconds since jenkins get the jobs after the page is loaded and causes a blank screen
+  await page.waitFor(4000);
   await browser.close();
 
   var data = {
