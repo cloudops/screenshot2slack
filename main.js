@@ -48,10 +48,10 @@ async function loginWithCookie(page, cookiesStr) {
   //// disable default viewport
   // see https://github.com/GoogleChrome/puppeteer/issues/1183
   await page._client.send('Emulation.clearDeviceMetricsOverride');
-  await page.screenshot({path: FILE_NAME, fullPage: (FULL_PAGE==='true')});
   await page.waitForFunction(
     'document.querySelector("body").innerText.includes("cloudmc-ui")',
   );
+  await page.screenshot({path: FILE_NAME, fullPage: (FULL_PAGE==='true')});
   await browser.close();
 
   var data = {
